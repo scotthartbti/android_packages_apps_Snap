@@ -25,14 +25,6 @@
         android:layout_gravity="bottom"
         android:clickable="true" />
 
-    <include
-        android:layout_width="64dip"
-        android:layout_height="64dip"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="8dip"
-        android:layout_marginRight="-8dip"
-        layout="@layout/menu_indicators" />
-
     <com.android.camera.ui.RotateImageView
         android:id="@+id/filter_mode_switcher"
         style="@style/ToggleButton" />
@@ -61,6 +53,7 @@
         android:id="@+id/preview_thumb"
         android:layout_width="@dimen/capture_size"
         android:layout_height="@dimen/capture_size"
+        android:layout_margin="12dp"
         android:layout_gravity="top|right"
         android:background="@android:color/transparent"
         android:contentDescription="@string/switch_photo_filmstrip"
@@ -96,16 +89,27 @@
             android:id="@+id/remaining_photos_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:visibility="gone" />
+            android:textColor="@android:color/white" />
 
         <ImageView
             android:id="@+id/remaining_photos_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/remaining_sheets"
-            android:visibility="gone" />
+            android:src="@drawable/remaining_sheets" />
     </LinearLayout>
+
+    <com.android.camera.ui.HistogramView
+        android:id="@+id/histogram"
+        android:layout_width="200dip"
+        android:layout_height="200dip"
+        android:layout_marginTop="20dip"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/auto_hdr_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_hdr_enabled"
+        android:visibility="gone" />
 
 </com.android.camera.ui.CameraControls>
